@@ -1,6 +1,5 @@
-<div class="charts">
-
-  <div class="chart">
+<div class="container">
+  <div class="item">
     <mat-card>
       <mat-card-content>
         <img src="assets/remediation-progress.png" alt="Remediation Chart">
@@ -8,7 +7,7 @@
     </mat-card>
   </div>
   
-  <div class="chart">
+  <div class="item">
     <mat-card>
       <mat-card-content>
         <img src="assets/keys-progress.png" alt="Key Chart">
@@ -16,70 +15,55 @@
     </mat-card>
   </div>
 
-  <div class="chart">
+  <div class="item">
     <mat-card>
       <mat-card-content>
         <img src="assets/servers-progress.png" alt="Server Chart">
       </mat-card-content>
     </mat-card>
   </div>
-    
 </div>
 
-<div class="card-container">
-<div class="cardsss">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Remediations</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="text">
-        <span class="total">55777</span>
-        <span><mat-icon color="primary">trending_up</mat-icon></span>
-        <span class="description">5%</span>
-        <span> of total</span>
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
-<div class="cardsss">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Keys</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="text">
-        <span class="total">86</span>
-        <span><mat-icon color="primary">trending_up</mat-icon></span>
-        <span class="description">3%</span>
-        <span> of total</span>
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
-<div class="cardsss">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Servers</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="text">
-        <span class="total">107</span>
-        <span><mat-icon color="primary">trending_up</mat-icon></span>
-        <span class="description">10%</span>
-        <span> of total</span>
-      </div>
-    </mat-card-content>
-  </mat-card>
-</div>
-</div>
+<div class="second-row-container">
 
-
-<div class="graph-container">
-
-  <div class="card">
-    <h2></h2>
-    <img src="assets/remediation-countdown.png" alt="Server Chart">
+<div class="lookup-container">
+  <div class="lookup">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Asset Lookup</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput placeholder="Enter asset name" [(ngModel)]="assetLookupText">
+        </mat-form-field>
+        <button mat-button color="primary" (click)="onSubmitAssetLookup()">Submit</button>
+      </mat-card-content>
+    </mat-card>
   </div>
+  <div class="lookup">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Key Path Lookup</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+          <input matInput placeholder="Enter key path" [(ngModel)]="keyPathLookupText">
+        </mat-form-field>
+        <button mat-button color="primary" (click)="onSubmitKeyPathLookup()">Submit</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
 
+<div class="null-container">
+  <div class="null-chart">
+    <mat-card>
+      <mat-card-content>
+        <img src="assets/null-data.png" alt="Null Data Chart">
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+
+</div>
 </div>

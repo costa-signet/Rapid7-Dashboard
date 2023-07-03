@@ -1,74 +1,52 @@
-.charts {
+.container {
   display: flex;
-  gap: 10px;
-  border: 1px solid black;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-
-.chart {
-  flex: 1;
-  padding: 10px;
-  border-radius: 4px;
+.item {
+  flex: 1 0 200px; /* Added min-width value of 200px */
+  margin: 10px; /* Added margin for spacing between items */
 }
-
-.chart img {
+.item img {
   max-width: 100%;
   height: auto;
 }
 
-.cards {
-  display: flex;
-  gap: 20px;
+.lookup-container {
+  
+  width: 30%;
+ 
 }
 
-.card {
+.lookup {
+  margin-bottom: 20px;
+}
+
+.lookup mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.null-container {
   flex: 1;
-  padding: 20px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 70%;
+  flex-direction: row
+  /* Add any additional styles for the other container */
+}
+.null-chart {
+  flex: 1 0 200px; /* Added min-width value of 200px */
+  margin: 10px; 
+}
+.null-chart img {
+  max-width: 100%;
+  height: auto;
 }
 
-h2, h3 {
-  margin: 0;
-  font-weight: bold;
-}
-
-.total {
-  font-size: 2.5em;
-}
-
-.mat-icon,
-.description {
-  color: green;
-  font-size: 2em;
-}
-
-.mat-icon {
-  position: relative;
-  padding: 0 20px;
-  top: 5px;
-}
-
-:host {
+.second-row-container {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-}
-
-mat-card {
-  flex: 1 0 48%; /* Adjust the width as per your requirements */
-  margin: 8px;
-}
-
-.card-container{
-  border: 1px solid black;
-}
-
-.graph-container{
-  border: 1px solid black;
-}
-
-.cardsss {
-  flex: 1;
-  padding: 10px;
-  border-radius: 4px;
 }
