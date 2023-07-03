@@ -1,0 +1,15 @@
+.top20-container {
+    display: flex;
+    gap: 10px;
+}
+  
+.top20 {
+    flex: 1;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+mat-card {
+    flex: 1 0 48%; /* Adjust the width as per your requirements */
+    margin: 8px;
+  }

@@ -1,0 +1,59 @@
+<div class="top20-container">
+    <div class="top20">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Top 20 Most Vulnerable Machines Lower Level by Risk Score</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <span> Data Schema</span>
+        <table>
+            <thead>
+              <tr>
+                <th>IP Address</th>
+                <th>Asset Name</th>
+                <th>CVSS2 Score</th>
+                <th>Risk Score</th>
+              </tr>
+            </thead>
+            <tbody> 
+            <!--<tr *ngFor="let wo of top20.content">-->
+              <tr>
+                <td>1.224.76.74</td>
+                <td>WINCO1</td>
+                <td>876</td>
+                <td>919</td>
+              </tr>
+            </tbody>
+          </table>
+        <button mat-button color="primary">Expand</button>
+      </mat-card-content>
+    </mat-card>
+    </div>
+    <div class="top20">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Top 20 High Vulnerability Count Lower Level with Server Key Details</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <span> Data Schema: 1.224.76.74 -- WINCO1 -- 780</span>
+        <table>
+            <!--<caption>IP Address -- Asset Name -- Count</caption>-->
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody> 
+              <tr>
+                <td>some/example/path/server</td>
+                <td>276</td>
+              </tr>
+            </tbody>
+          </table>
+        <button mat-button color="primary">Expand</button>
+      </mat-card-content>
+    </mat-card>
+    </div>
+  
+</div>

@@ -1,0 +1,12 @@
+.lookup-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.lookup {
+  flex: 1;
+  margin: 0 5px;
+}
