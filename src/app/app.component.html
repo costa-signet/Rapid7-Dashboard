@@ -3,15 +3,11 @@
     <mat-nav-list>
       <div class="logo" ><img width="120" alt="Angular Logo" src="assets/Signet_Jewelers.jpg"/></div>
       <a mat-list-item routerLink="/home" routerLinkActive="active">Dashboard</a>
-      <a mat-list-item routerLink="/top20" routerLinkActive="active">Reports</a>
-      <a mat-list-item routerLink="/lookup" routerLinkActive="active">Lookup</a>
+      <a mat-list-item routerLink="/top20" routerLinkActive="active">Top20 Reports</a>
+      <a mat-list-item routerLink="/analysis" routerLinkActive="active">Vulnerability Analysis</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <!--
-    <div class="toolbar">
-      <h2>Current Report: 2023-05-20</h2>
-    </div>-->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

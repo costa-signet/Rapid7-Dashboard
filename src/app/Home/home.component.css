@@ -1,3 +1,15 @@
+.toolbar{
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.button-container {
+  display: inline-block;
+}
 .container {
   display: flex;
   flex-direction: row;
@@ -13,9 +25,7 @@
 }
 
 .lookup-container {
-  
   width: 30%;
- 
 }
 
 .lookup {
@@ -33,16 +43,24 @@
 .null-container {
   flex: 1;
   width: 70%;
-  flex-direction: row
-  /* Add any additional styles for the other container */
+  display: flex;
+  flex-direction: row;
 }
 .null-chart {
-  flex: 1 0 200px; /* Added min-width value of 200px */
+  /*flex: 1 0 200px;  Added min-width value of 200px */
+  flex: 1;
   margin: 10px; 
 }
 .null-chart img {
   max-width: 100%;
   height: auto;
+}
+.null-chart mat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .second-row-container {

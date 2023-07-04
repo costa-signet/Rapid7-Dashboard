@@ -9,7 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 
-import { LookupComponent } from './Lookup/lookup.component';
+import { VulAnalysisComponent } from './Analysis/vulnerability-analysis.component';
 import { Top20Component } from './Top20/top20.component';
 import { HomeComponent } from './Home/home.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,17 +17,20 @@ import { MatCardModule } from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { LookupDetailsComponent } from './Lookup/Details/lookup-details.component';
-import { Top20DetailsComponent } from './Top20/Details/top20-details.component';
+import { RiskScoreDetailsComponent } from './Dialogs/RiskScore/risk-score-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+import { ExploreDataComponent } from './Dialogs/DataExplore/explore-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LookupComponent,
-    LookupDetailsComponent,
+    VulAnalysisComponent,
     Top20Component,
-    Top20DetailsComponent
+    RiskScoreDetailsComponent,
+    ExploreDataComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,10 @@ import { Top20DetailsComponent } from './Top20/Details/top20-details.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

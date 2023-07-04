@@ -1,15 +1,38 @@
-.top20-container {
+.container {
     display: flex;
-    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+.agg-container {
+    width: 50%;
 }
   
-.top20 {
-    flex: 1;
-    padding: 10px;
-    border-radius: 4px;
+.agg-card {
+    margin-bottom: 20px;
+}
+  
+.agg-card mat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-mat-card {
-    flex: 1 0 48%; /* Adjust the width as per your requirements */
-    margin: 8px;
-  }
+.server-details-container {
+    width: 50%;
+    flex: 1;
+}
+  
+.server-details-card {
+    margin-bottom: 20px;
+}
+  
+.server-details-card mat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

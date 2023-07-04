@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, catchError, combineLatest, map, tap, throwError } from "rxjs";
+import { AssetAnalysis, IPAnalysis, MACAnalysis } from "./Types/Asset-Analysis";
 import { Reports } from "./Types/Reports";
 
 
@@ -12,8 +13,30 @@ export class AppService{
     private reportSelectionSubject = new BehaviorSubject<string>('2023-05-02-rapid7');     //hard code most recent report for now
     
     private LIST_URL = 'https://kbt9dzwcd4.execute-api.us-east-2.amazonaws.com/list';
-
+    private ASSET_URL = 'assets/serverClient-asset.json';
+    private IP_URL = 'assets/serverClient-ip.json';
+    private MAC_URL = 'assets/serverClient-mac.json';
     constructor (private http: HttpClient) { }
+
+    asset$ = this.http.get<AssetAnalysis[]>(this.ASSET_URL).pipe(
+        tap(data => console.log('All: ', JSON.stringify(data))), 
+        catchError(this.handleError)
+    );
+
+    ip$ = this.http.get<IPAnalysis[]>(this.IP_URL).pipe(
+        tap(data => console.log('All: ', JSON.stringify(data))), 
+        catchError(this.handleError)
+    );
+    mac$ = this.http.get<MACAnalysis[]>(this.MAC_URL).pipe(
+        tap(data => console.log('All: ', JSON.stringify(data))), 
+        catchError(this.handleError)
+    );
+
+
+
+
+
+
     
     rapid7Files$ = this.http.get<Reports[]>(this.LIST_URL).pipe(
         tap(data => console.log('All: ', JSON.stringify(data))), 
