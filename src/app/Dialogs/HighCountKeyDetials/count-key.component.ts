@@ -3,19 +3,20 @@ import { catchError, EMPTY } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 
 @Component({
-  selector: 'risk-score-details',
-  templateUrl: './risk-score-details.component.html',
+  selector: 'count-key-details',
+  templateUrl: './count-key.component.html',
 
 })
-export class RiskScoreDetailsComponent{
-  errorMessage: string = '';
+export class HighCountSeverKeyComponent{
+    errorMessage: string = '';
     constructor(private appService: AppService) {}
 
-  riskScore$ = this.appService.selectedRiskScore$
+    countKey$ = this.appService.selectedCountKey$
     .pipe(
       catchError(err => {
         this.errorMessage = err;
         return EMPTY;
       })
     );
+  
 }

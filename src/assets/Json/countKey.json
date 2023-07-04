@@ -1,0 +1,472 @@
+[
+    {
+        "name": "Top 20 Most Vulnerable Machines by Highest Count",
+        "output": [
+          {
+            "ip_address": "10.224.0.34",
+            "asset_name": "plinpmapp01",
+            "count": 837
+          },
+          {
+            "ip_address": "10.243.42.15",
+            "asset_name": "rhinfdevpc01",
+            "count": 805
+          },
+          {
+            "ip_address": "10.224.0.33",
+            "asset_name": "plinpmapp00",
+            "count": 794
+          },
+          {
+            "ip_address": "10.224.6.74",
+            "asset_name": "dlds10hdb00.irving.zalecorp.com",
+            "count": 780
+          },
+          {
+            "ip_address": "10.224.0.55",
+            "asset_name": "plps10app00.irving.zalecorp.com",
+            "count": 780
+          },
+          {
+            "ip_address": "10.224.0.69",
+            "asset_name": "plps10hdb00",
+            "count": 780
+          },
+          {
+            "ip_address": "10.224.10.11",
+            "asset_name": "ploem1app01",
+            "count": 766
+          },
+          {
+            "ip_address": "10.224.44.20",
+            "asset_name": "ulor01rdb01",
+            "count": 765
+          },
+          {
+            "ip_address": "10.224.52.12",
+            "asset_name": "lvodbboebd",
+            "count": 764
+          },
+          {
+            "ip_address": "10.224.0.74",
+            "asset_name": "plmft0app01.irving.zalecorp.com",
+            "count": 764
+          },
+          {
+            "ip_address": "10.224.46.11",
+            "asset_name": "lvodb002bp",
+            "count": 764
+          },
+          {
+            "ip_address": "10.224.0.73",
+            "asset_name": "plmft0app00.irving.zalecorp.com",
+            "count": 764
+          },
+          {
+            "ip_address": "10.243.42.25",
+            "asset_name": "rhinfqapc01.sterling.com",
+            "count": 759
+          },
+          {
+            "ip_address": "172.29.211.60",
+            "asset_name": "rhecomdevwas01",
+            "count": 750
+          },
+          {
+            "ip_address": "10.250.52.148",
+            "asset_name": "rhesprodtws02",
+            "count": 750
+          },
+          {
+            "ip_address": "10.250.52.147",
+            "asset_name": "rhesprodtws01.sterling.com",
+            "count": 750
+          },
+          {
+            "ip_address": "10.250.48.14",
+            "asset_name": "ex01dbadm03.sterling.com",
+            "count": 749
+          },
+          {
+            "ip_address": "10.51.10.51",
+            "asset_name": "lvodb01p.zalecorp.com",
+            "count": 741
+          },
+          {
+            "ip_address": "10.8.51.30",
+            "asset_name": "dlawcltininfo01.jewels.com",
+            "count": 732
+          },
+          {
+            "ip_address": "10.51.10.61",
+            "asset_name": "lvodb012ap.irving.zalecorp.com",
+            "count": 728
+          }
+        ]
+      },
+      {
+        "name": "Top 20 Most Vulnerable Machines Lower Levels by Highest Count",
+        "output": [
+          {
+            "ip_address": "10.224.6.74",
+            "asset_name": "dlds10hdb00.irving.zalecorp.com",
+            "count": 780
+          },
+          {
+            "ip_address": "10.8.51.30",
+            "asset_name": "dlawcltininfo01.jewels.com",
+            "count": 732
+          },
+          {
+            "ip_address": "10.224.6.197",
+            "asset_name": "dlcoinfaapp04",
+            "count": 599
+          },
+          {
+            "ip_address": "10.224.6.198",
+            "asset_name": "dlcoinfaapp05",
+            "count": 593
+          },
+          {
+            "ip_address": "10.224.6.196",
+            "asset_name": "dlcoinfaapp03.jewels.com",
+            "count": 593
+          },
+          {
+            "ip_address": "10.224.6.49",
+            "asset_name": "dlcoinfaapp02.jewels.com",
+            "count": 593
+          },
+          {
+            "ip_address": "10.8.5.12",
+            "asset_name": "dwawrparob02",
+            "count": 475
+          },
+          {
+            "ip_address": "10.224.6.31",
+            "asset_name": "dlds10app00",
+            "count": 412
+          },
+          {
+            "ip_address": "10.224.57.26",
+            "asset_name": "dlatlsapp08",
+            "count": 381
+          },
+          {
+            "ip_address": "10.224.6.11",
+            "asset_name": "dlinpcrdb00.irving.zalecorp.com",
+            "count": 364
+          },
+          {
+            "ip_address": "10.224.42.45",
+            "asset_name": "dlfesbapp01.irving.zalecorp.com",
+            "count": 355
+          },
+          {
+            "ip_address": "10.224.42.11",
+            "asset_name": "dlfesbapp00.irving.zalecorp.com",
+            "count": 355
+          },
+          {
+            "ip_address": "10.224.6.124",
+            "asset_name": "dldi20app00",
+            "count": 264
+          },
+          {
+            "ip_address": "10.243.54.11",
+            "asset_name": "dlakor01db02.jewels.com",
+            "count": 260
+          },
+          {
+            "ip_address": "10.243.54.19",
+            "asset_name": "dlakor02db01",
+            "count": 259
+          },
+          {
+            "ip_address": "10.224.6.178",
+            "asset_name": "dlcoor01db02.jewels.com",
+            "count": 259
+          },
+          {
+            "ip_address": "10.243.54.10",
+            "asset_name": "dlakor01db01",
+            "count": 259
+          },
+          {
+            "ip_address": "10.243.54.20",
+            "asset_name": "dlakor02db02",
+            "count": 259
+          },
+          {
+            "ip_address": "10.224.6.123",
+            "asset_name": "dldc20hdb00",
+            "count": 246
+          },
+          {
+            "ip_address": "10.224.6.105",
+            "asset_name": "dldb20hdb00",
+            "count": 239
+          }
+        ]
+      },
+      {
+        "name": "Top 20 High Vulnerability Count with Server Key Details",
+        "output": [
+          {
+            "ip_address": "10.243.42.25",
+            "asset_name": "rhinfqapc01.sterling.com",
+            "key": "/opt/Informatica/Software/EBF443385/Installer/lib/jre6/lib/rt.jar",
+            "count": 156
+          },
+          {
+            "ip_address": "10.224.44.20",
+            "asset_name": "ulor01rdb01",
+            "key": "/opt/CA/WorkloadAutomationAE/SystemAgent/WA_AGENT/jre/lib/rt.jar",
+            "count": 245
+          },
+          {
+            "ip_address": "10.224.52.12",
+            "asset_name": "lvodbboebd",
+            "key": "/opt/CA/WorkloadAutomationAE/SystemAgent/WA_AGENT/jre/lib/rt.jar",
+            "count": 212
+          },
+          {
+            "ip_address": "10.224.10.11",
+            "asset_name": "ploem1app01",
+            "key": "/opt/CA/WorkloadAutomationAE/SystemAgent/WA_AGENT/jre/lib/rt.jar",
+            "count": 231
+          },
+          {
+            "ip_address": "10.224.0.55",
+            "asset_name": "plps10app00.irving.zalecorp.com",
+            "key": "/opt/CA/SharedComponents/JRE/1.5.0_11/lib/rt.jar",
+            "count": 101
+          },
+          {
+            "ip_address": "172.29.211.60",
+            "asset_name": "rhecomdevwas01",
+            "key": "/opt/endeca_v6/endeca/PlatformServices/6.1.1/j2sdk/jre/lib/rt.jar",
+            "count": 132
+          },
+          {
+            "ip_address": "10.224.6.74",
+            "asset_name": "dlds10hdb00.irving.zalecorp.com",
+            "key": "/opt/CA/SharedComponents/JRE/1.5.0_11/lib/rt.jar",
+            "count": 109
+          },
+          {
+            "ip_address": "10.224.0.33",
+            "asset_name": "plinpmapp00",
+            "key": "/opt/CA/WorkloadAutomationAE/SystemAgent/WA_AGENT/jre/lib/rt.jar",
+            "count": 187
+          },
+          {
+            "ip_address": "10.224.0.74",
+            "asset_name": "plmft0app01.irving.zalecorp.com",
+            "key": "/opt/CA/SharedComponents/JRE/1.5.0_11/lib/rt.jar",
+            "count": 188
+          },
+          {
+            "ip_address": "10.250.52.147",
+            "asset_name": "rhesprodtws01.sterling.com",
+            "key": "/opt/XIVGUI/jre/lib/rt.jar",
+            "count": 288
+          }
+        ]
+      },
+      {
+        "name": "Top 20 High Vulnerability Scores with Server Key Details",
+        "output": [
+          {
+            "ip_address": "10.250.52.147",
+            "asset_name": "rhesprodtws01.sterling.com",
+            "key": "/opt/oracle/11.2.0.3.CL/jdk/jre/lib/rt.jar",
+            "count": 93
+          },
+          {
+            "ip_address": "10.224.46.11",
+            "asset_name": "lvodb002bp",
+            "key": "/opt/CA/SharedComponents/JRE/1.5.0_11/lib/rt.jar",
+            "count": 190
+          },
+          {
+            "ip_address": "10.51.10.61",
+            "asset_name": "lvodb012ap.irving.zalecorp.com",
+            "key": "/oracle/product/11.2.0/db1/jdk/jre/lib/rt.jar",
+            "count": 109
+          },
+          {
+            "ip_address": "10.224.0.34",
+            "asset_name": "plinpmapp01",
+            "key": "/opt/CA/WorkloadAutomationAE/SystemAgent/WA_AGENT/jre/lib/rt.jar",
+            "count": 175
+          },
+          {
+            "ip_address": "10.224.0.73",
+            "asset_name": "plmft0app00.irving.zalecorp.com",
+            "key": "/opt/CA/WorkloadAutomationAE/SystemAgent/WA_AGENT/jre/lib/rt.jar",
+            "count": 336
+          },
+          {
+            "ip_address": "10.224.0.69",
+            "asset_name": "plps10hdb00",
+            "key": "/opt/CA/WorkloadAutomationAE/SystemAgent/WA_AGENT/jre/lib/rt.jar",
+            "count": 281
+          },
+          {
+            "ip_address": "10.243.42.15",
+            "asset_name": "rhinfdevpc01",
+            "key": "/opt/software/EBF443385/Installer/lib/jre6/lib/rt.jar",
+            "count": 93
+          },
+          {
+            "ip_address": "10.224.44.20",
+            "asset_name": "ulor01rdb01",
+            "key": "/opt/CA/SharedComponents/JRE/1.5.0_11/lib/rt.jar",
+            "count": 189
+          },
+          {
+            "ip_address": "10.224.10.11",
+            "asset_name": "ploem1app01",
+            "key": "/u01/app/oracle/product/11.1.0/client_1/jdk/jre/lib/rt.jar",
+            "count": 72
+          },
+          {
+            "ip_address": "172.29.211.60",
+            "asset_name": "rhecomdevwas01",
+            "key": "/opt/oracle/11.2.0.1.CL/jdk/jre/lib/rt.jar",
+            "count": 102
+          }
+        ]
+      },
+      {
+        "name": "Top 20 High Vulnerability Scores Lower Level with Server Key Details",
+        "output": [
+          {
+            "ip_address": "10.224.6.74",
+            "asset_name": "dlds10hdb00.irving.zalecorp.com",
+            "key": "/opt/CA/SharedComponents/JRE/1.5.0_11/lib/rt.jar",
+            "count": 109
+          },
+          {
+            "ip_address": "10.8.5.12",
+            "asset_name": "dwawrparob02",
+            "key": "C:\\Program Files (x86)\\Java\\jre6\\bin\\java.dll",
+            "count": 475
+          },
+          {
+            "ip_address": "10.8.51.30",
+            "asset_name": "dlawcltininfo01.jewels.com",
+            "key": "/Informatica/infa_shared/software/EBF-13615/Installer/lib/jre6/lib/rt.jar",
+            "count": 76
+          },
+          {
+            "ip_address": "10.224.6.198",
+            "asset_name": "dlcoinfaapp05",
+            "key": "/app/informatica/pc10u1/Uninstaller_Server/lib/rt.jar",
+            "count": 366
+          },
+          {
+            "ip_address": "10.224.6.31",
+            "asset_name": "dlds10app00",
+            "key": "/oracle/product/11.2.0/db1/jdk/jre/lib/rt.jar",
+            "count": 86
+          },
+          {
+            "ip_address": "10.8.51.30",
+            "asset_name": "dlawcltininfo01.jewels.com",
+            "key": "/Informatica/infa_shared/software/BDM102/EBF-10663/Installer/lib/jre6/lib/rt.jar",
+            "count": 55
+          },
+          {
+            "ip_address": "10.224.6.124",
+            "asset_name": "dldi20app00",
+            "key": "/usr/sap/DI2/J01/j2ee/cluster/bin/ext/grc~graclib/rt.jar",
+            "count": 35
+          },
+          {
+            "ip_address": "10.224.6.30",
+            "asset_name": "dldi10app00.jewels.com",
+            "key": "/usr/sap/DI1/J01/j2ee/cluster/apps/sap.com/grc~gracauthmgmtpi/servlet_jsp/grc.gracauthmgmtpi/root/WEB-INF/private/lib/rt.jar",
+            "count": 20
+          },
+          {
+            "ip_address": "10.224.42.11",
+            "asset_name": "dlfesbapp00.irving.zalecorp.com",
+            "key": "/var/esb/java/jdk1.8.0_112/jre/lib/rt.jar",
+            "count": 79
+          },
+          {
+            "ip_address": "10.243.54.10",
+            "asset_name": "dlakor01db01",
+            "key": "/u01/app/oracle/product/18.0.0.0/dbhome_1/OPatch_bkp/jre/lib/rt.jar",
+            "count": 137
+          }
+        ]
+      },
+      {
+        "name": "Top 20 High Vulnerability Count Lower Level with Server Key Details",
+        "output": [
+          {
+            "ip_address": "10.224.6.74",
+            "asset_name": "dlds10hdb00.irving.zalecorp.com",
+            "key": "/opt/CA/WorkloadAutomationAE/SystemAgent/WA_AGENT/jre/lib/rt.jar",
+            "count": 275
+          },
+          {
+            "ip_address": "10.8.51.30",
+            "asset_name": "dlawcltininfo01.jewels.com",
+            "key": "/Informatica/infa_shared/software/EBF-14697/Installer/lib/jre6/lib/rt.jar",
+            "count": 51
+          },
+          {
+            "ip_address": "10.8.51.30",
+            "asset_name": "dlawcltininfo01.jewels.com",
+            "key": "/Informatica/infa_shared/software/EBF-9043/Installer/lib/jre6/lib/rt.jar",
+            "count": 51
+          },
+          {
+            "ip_address": "10.8.51.30",
+            "asset_name": "dlawcltininfo01.jewels.com",
+            "key": "/opt/software/appd/machineagent/jre/lib/rt.jar",
+            "count": 33
+          },
+          {
+            "ip_address": "10.224.6.198",
+            "asset_name": "dlcoinfaapp05",
+            "key": "/app/informatica/pc10u1/tools/debugtools/java/jre/lib/rt.jar",
+            "count": 43
+          },
+          {
+            "ip_address": "10.224.6.49",
+            "asset_name": "dlcoinfaapp02.jewels.com",
+            "key": "/tmp/OraInstall2022-10-13_07-16-50AM/jdk/jre/lib/rt.jar",
+            "count": 30
+          },
+          {
+            "ip_address": "10.224.6.124",
+            "asset_name": "dldi20app00",
+            "key": "/usr/sap/DI2/J01/j2ee/cluster/apps/sap.com/grc~gracauthmgmtpi/app_libraries_container/rt.jar",
+            "count": 20
+          },
+          {
+            "ip_address": "10.224.6.198",
+            "asset_name": "dlcoinfaapp05",
+            "key": "/app/MFT/MFT_Backup10.2.0/jdk1.8/jre/lib/rt.jar",
+            "count": 56
+          },
+          {
+            "ip_address": "10.224.6.74",
+            "asset_name": "dlds10hdb00.irving.zalecorp.com",
+            "key": "/hana/shared/DS1/hdbstudio/plugins/com.sap.ide.sapjvm.jre.linux.x86_64_81.23.23/jre/lib/rt.jar",
+            "count": 102
+          },
+          {
+            "ip_address": "10.243.53.11",
+            "asset_name": "dlakasysapp01.jewels.com",
+            "key": "/opt/CA/WorkloadAutomationAE/JRE_WA/lib/rt.jar",
+            "count": 55
+          }
+        ]
+      }
+]

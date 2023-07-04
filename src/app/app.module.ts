@@ -24,6 +24,7 @@ import {MatTableModule} from '@angular/material/table';
 import { ExploreDataComponent } from './Dialogs/DataExplore/explore-data.component';
 import { ChartDisplayComponent } from './Dialogs/Charts/chart-display.component';
 import { VendorComponent } from './Dialogs/Vendors/vendors.component';
+import { HighCountSeverKeyComponent } from './Dialogs/HighCountKeyDetials/count-key.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { VendorComponent } from './Dialogs/Vendors/vendors.component';
     RiskScoreDetailsComponent,
     ExploreDataComponent,
     ChartDisplayComponent,
-    VendorComponent
+    VendorComponent,
+    HighCountSeverKeyComponent
   ],
   imports: [
     BrowserModule,

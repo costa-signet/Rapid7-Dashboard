@@ -1,1 +1,23 @@
-<p>test</p>
+<div class="table" *ngIf="riskScore$ | async as riskScore">
+    <h2 mat-dialog-title>{{riskScore.name}}</h2>
+    <mat-dialog-content>
+    <table> 
+      <thead>
+        <tr>
+            <th>IP Address</th>
+            <th>Asset Name</th>
+            <th>cvss2 score</th>       
+            <th>Risk Score</th>   
+        </tr>
+        </thead>
+        <tbody> 
+        <tr *ngFor="let rs of riskScore.details">
+            <td>{{ rs.ip_address }}</td>
+            <td>{{ rs.asset_name }}</td>
+            <td>{{ rs.cvss2_score }}</td>
+            <td>{{ rs.risk_score }}</td>
+        </tr>
+        </tbody>
+    </table> 
+    </mat-dialog-content> 
+</div>
