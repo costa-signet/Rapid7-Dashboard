@@ -16,14 +16,14 @@ export class Top20Component{
   openDialog(countKeyName: string){
     this.appService.selectedCountKeyChange(countKeyName);
     this.dialog.open(HighCountSeverKeyComponent, {
-      width: '75%',
+      width: '50%',
       height: '75%',
     });
   }
   open(riskScoreName: string){
     this.appService.selectedRiskScoreChange(riskScoreName);
     this.dialog.open(RiskScoreDetailsComponent, {
-      width: '75%',
+      width: '50%',
       height: '75%',
     });
   }

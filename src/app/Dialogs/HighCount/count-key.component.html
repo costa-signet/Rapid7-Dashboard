@@ -1,0 +1,21 @@
+<div class="table" *ngIf="countKey$ | async as countKey">
+    <h2 mat-dialog-title>{{countKey.name}}</h2>
+    <mat-dialog-content>
+    <table> 
+      <thead>
+        <tr>
+            <th>IP Address</th>
+            <th>Asset Name</th>
+            <th>Count</th>        
+        </tr>
+        </thead>
+        <tbody> 
+        <tr *ngFor="let ck of countKey.output">
+            <td>{{ ck.ip_address }}</td>
+            <td>{{ ck.asset_name }}</td>
+            <td>{{ ck.count }}</td>
+        </tr>
+        </tbody>
+    </table> 
+    </mat-dialog-content> 
+</div>
