@@ -22,6 +22,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { ExploreDataComponent } from './Dialogs/DataExplore/explore-data.component';
+import { ChartDisplayComponent } from './Dialogs/Charts/chart-display.component';
+import { VendorComponent } from './Dialogs/Vendors/vendors.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ExploreDataComponent } from './Dialogs/DataExplore/explore-data.compone
     VulAnalysisComponent,
     Top20Component,
     RiskScoreDetailsComponent,
-    ExploreDataComponent
+    ExploreDataComponent,
+    ChartDisplayComponent,
+    VendorComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ import { ExploreDataComponent } from './Dialogs/DataExplore/explore-data.compone
     MatDialogModule,
     HttpClientModule,
     MatTableModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

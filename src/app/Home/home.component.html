@@ -9,24 +9,33 @@
 <div class="container">
   <div class="item">
     <mat-card>
+      <mat-card-header>
+        <button mat-button (click)="openChart(1)"><mat-card-title>Remediation</mat-card-title></button>
+      </mat-card-header>
       <mat-card-content>
-        <img src="assets/remediation-progress.png" alt="Remediation Chart">
+        <img src="assets/Charts/remediation-progress.png" alt="Remediation Chart">
       </mat-card-content>
     </mat-card>
   </div>
   
   <div class="item">
     <mat-card>
+      <mat-card-header>
+        <button mat-button (click)="openChart(2)"><mat-card-title>Key</mat-card-title></button>
+      </mat-card-header>
       <mat-card-content>
-        <img src="assets/keys-progress.png" alt="Key Chart">
+        <img src="assets/Charts/keys-progress.png" alt="Key Chart">
       </mat-card-content>
     </mat-card>
   </div>
 
   <div class="item">
     <mat-card>
+      <mat-card-header>
+        <button mat-button (click)="openChart(3)"><mat-card-title>Server</mat-card-title></button>
+      </mat-card-header>
       <mat-card-content>
-        <img src="assets/servers-progress.png" alt="Server Chart">
+        <img src="assets/Charts/servers-progress.png" alt="Server Chart">
       </mat-card-content>
     </mat-card>
   </div>
@@ -67,10 +76,10 @@
   <div class="null-chart">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Null Data</mat-card-title>
+        <button mat-button (click)="openChart(4)"><mat-card-title>Null Data</mat-card-title></button>
       </mat-card-header>
       <mat-card-content>
-        <img src="assets/null-data.png" alt="Null Data Chart">
+        <img src="assets/Charts/null-data.png" alt="Null Data Chart">
       </mat-card-content>
     </mat-card>
   </div>

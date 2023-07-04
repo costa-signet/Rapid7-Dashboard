@@ -1,8 +1,9 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, catchError, combineLatest, map, tap, throwError } from "rxjs";
-import { AssetAnalysis, IPAnalysis, MACAnalysis } from "./Types/Asset-Analysis";
-import { Reports } from "./Types/Reports";
+import { Vendor } from "./Dialogs/Vendors/Vendor";
+import { OSProduct } from "./Types/OSProduct";
+
 
 
 @Injectable({
@@ -10,51 +11,34 @@ import { Reports } from "./Types/Reports";
 })
 //Service to load app component
 export class AppService{
-    private reportSelectionSubject = new BehaviorSubject<string>('2023-05-02-rapid7');     //hard code most recent report for now
-    
-    private LIST_URL = 'https://kbt9dzwcd4.execute-api.us-east-2.amazonaws.com/list';
-    private ASSET_URL = 'assets/serverClient-asset.json';
-    private IP_URL = 'assets/serverClient-ip.json';
-    private MAC_URL = 'assets/serverClient-mac.json';
+
+    private OS = 'assets/Json/os-product.json';
+    private VENDOR = 'assets/Json/vendor.json';
+    private vendorSelectionSubject = new BehaviorSubject<string>('');
     constructor (private http: HttpClient) { }
 
-    asset$ = this.http.get<AssetAnalysis[]>(this.ASSET_URL).pipe(
+    osProduct$ = this.http.get<OSProduct[]>(this.OS).pipe(
         tap(data => console.log('All: ', JSON.stringify(data))), 
         catchError(this.handleError)
     );
 
-    ip$ = this.http.get<IPAnalysis[]>(this.IP_URL).pipe(
-        tap(data => console.log('All: ', JSON.stringify(data))), 
-        catchError(this.handleError)
-    );
-    mac$ = this.http.get<MACAnalysis[]>(this.MAC_URL).pipe(
+    vendors$ = this.http.get<Vendor[]>(this.VENDOR).pipe(
         tap(data => console.log('All: ', JSON.stringify(data))), 
         catchError(this.handleError)
     );
 
+    vendorSelectionAction$ = this.vendorSelectionSubject.asObservable();
 
-
-
-
-
-    
-    rapid7Files$ = this.http.get<Reports[]>(this.LIST_URL).pipe(
-        tap(data => console.log('All: ', JSON.stringify(data))), 
-        catchError(this.handleError)
-    );
-
-    reportSelectionAction$ = this.reportSelectionSubject.asObservable();
-
-    selectedReport$ = combineLatest([this.rapid7Files$, this.reportSelectionAction$])
+    selectedVendor$ = combineLatest([this.vendors$, this.vendorSelectionAction$])
         .pipe(
-            map(([rapid7Files, selectedReportName]) => 
-                rapid7Files.find(rapid7File => rapid7File.file === selectedReportName)),
-            tap(report => console.log('selected report', report))
-        );
-
-    selectedReportChange(selectedReportName: string): void{ 
-        this.reportSelectionSubject.next(selectedReportName);
-        console.log('selected rapid7 file name ', this.reportSelectionSubject.value);
+            map(([vendors, selectedVendorName]) => 
+                vendors.find(vendor => vendor.search === selectedVendorName)),
+            tap(name => console.log('selected venodr ', name))
+    );
+   
+    selectedVendorChange(selectedVendorName: string): void{ 
+        this.vendorSelectionSubject.next(selectedVendorName);
+        console.log('selected vendor name function ', this.vendorSelectionSubject.value);
     }
 
     private handleError(err: HttpErrorResponse){

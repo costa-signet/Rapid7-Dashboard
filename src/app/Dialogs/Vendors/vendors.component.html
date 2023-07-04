@@ -1,0 +1,25 @@
+<div class="table" *ngIf="vendor$ | async as vendor">
+    <h2 mat-dialog-title>OS Vendor: {{vendor.search}}</h2>
+    <mat-dialog-content>
+    <table> 
+      <thead>
+        <tr>
+            <th>IP Address</th>
+            <th>Asset Name</th>
+            <th>OS Vendor</th>
+            <th>OS Product</th>
+            <th>Count</th>        
+        </tr>
+        </thead>
+        <tbody> 
+        <tr *ngFor="let v of vendor.details">
+            <td>{{ v.ip_address }}</td>
+            <td>{{ v.asset_name }}</td>
+            <td>{{ v.os_vendor }}</td>
+            <td>{{ v.os_product }}</td>
+            <td>{{ v.count }}</td>
+        </tr>
+        </tbody>
+    </table> 
+    </mat-dialog-content> 
+</div>
