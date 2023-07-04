@@ -1,0 +1,67 @@
+<div class="table" *ngIf="lookup$ | async as lookup">
+    <h2 mat-dialog-title>Lookup Results</h2>
+    <mat-dialog-content>
+        <table>
+          <thead>
+            <tr>
+              <th>Solution</th>
+              <th>Vulnerability ID</th>
+              <th>Vulnerability Title</th>
+              <th>CVSS2 Score</th>
+              <th>CVSS3 Score</th>
+              <th>Risk Score</th>
+              <th>Vulnerability Publish Date</th>
+              <th>Vulnerability First Discovered Date</th>
+              <th>Asset Name</th>
+              <th>IP Address</th>
+              <th>Asset Type</th>
+              <th>MAC Address</th>
+              <th>Containers</th>
+              <th>Assessment Data Source</th>
+              <th>Last Data Collection</th>
+              <th>Credentials Succeeded</th>
+              <th>Remediated</th>
+              <th>Proof</th>
+              <th>Key</th>
+              <th>Port</th>
+              <th>Protocol</th>
+              <th>Operating System Certainty</th>
+              <th>Operating System Vendor</th>
+              <th>Operating System Product</th>
+              <th>Operating System Version</th>
+              <th>Deleted Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let l of lookup">
+                <td>{{ l.solution }}</td>
+                <td>{{ l['vulnerability_id#0'] }}</td>
+                <td>{{ l['vulnerability_title#1'] }}</td>
+                <td>{{ l['cvss2_score#2'] }}</td>
+                <td>{{ l['cvss3_score#3'] }}</td>
+                <td>{{ l['risk_score#4'] }}</td>
+                <td>{{ l['vulnerability_publish_date#5'] }}</td>
+                <td>{{ l['vulnerability_first_discovered_date#6'] }}</td>
+                <td>{{ l['asset_name#7'] }}</td>
+                <td>{{ l['ip_address#8'] }}</td>
+                <td>{{ l['asset_type#9'] }}</td>
+                <td>{{ l['mac_address#10'] }}</td>
+                <td>{{ l.containers }}</td>
+                <td>{{ l['assessment_data_source#11'] }}</td>
+                <td>{{ l['last_data_collection#12'] }}</td>
+                <td>{{ l['credentials_succeeded#13'] }}</td>
+                <td>{{ l.remediated }}</td>
+                <td>{{ l.proof }}</td>
+                <td>{{ l.key }}</td>
+                <td>{{ l.port }}</td>
+                <td>{{ l.protocol }}</td>
+                <td>{{ l['operating_system_certainty#14'] }}</td>
+                <td>{{ l['operating_system_vendor#15'] }}</td>
+                <td>{{ l['operating_system_product#16'] }}</td>
+                <td>{{ l['operating_system_version#17'] }}</td>
+                <td>{{ l['deleted_time#18'] }}</td>
+              </tr>              
+          </tbody>
+        </table>
+    </mat-dialog-content>
+</div>

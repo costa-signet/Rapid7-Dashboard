@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ChartDisplayComponent } from '../Dialogs/Charts/chart-display.component';
 import { ExploreDataComponent } from '../Dialogs/DataExplore/explore-data.component';
+import { AssetLookupComponent } from '../Dialogs/Lookups/asset-lookup.component';
+import { KeyLookupComponent } from '../Dialogs/Lookups/key-lookup.component';
 
 @Component({
   selector: 'app-home-display',
@@ -17,10 +19,20 @@ export class HomeComponent{
 
   onSubmitAssetLookup() {
     console.log('Asset Lookup Text:', this.assetLookupText);
+    this.dialog.open(AssetLookupComponent, {
+      width: '97%',
+      height: '80%',
+      data: this.assetLookupText
+    });
   }
 
   onSubmitKeyPathLookup() {
     console.log('Key Path Lookup Text:', this.keyPathLookupText);
+    this.dialog.open(KeyLookupComponent, {
+      width: '97%',
+      height: '80%',
+      data: this.keyPathLookupText
+    });
   }
 
   exploreData(){

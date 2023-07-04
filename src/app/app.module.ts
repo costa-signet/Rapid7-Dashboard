@@ -25,6 +25,8 @@ import { ExploreDataComponent } from './Dialogs/DataExplore/explore-data.compone
 import { ChartDisplayComponent } from './Dialogs/Charts/chart-display.component';
 import { VendorComponent } from './Dialogs/Vendors/vendors.component';
 import { HighCountSeverKeyComponent } from './Dialogs/HighCountKeyDetials/count-key.component';
+import { AssetLookupComponent } from './Dialogs/Lookups/asset-lookup.component';
+import { KeyLookupComponent } from './Dialogs/Lookups/key-lookup.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { HighCountSeverKeyComponent } from './Dialogs/HighCountKeyDetials/count-
     ExploreDataComponent,
     ChartDisplayComponent,
     VendorComponent,
-    HighCountSeverKeyComponent
+    HighCountSeverKeyComponent,
+    AssetLookupComponent,
+    KeyLookupComponent
   ],
   imports: [
     BrowserModule,

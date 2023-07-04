@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, catchError, combineLatest, map, tap, throwError } from "rxjs";
 import { CountKey } from "./Dialogs/HighCountKeyDetials/CountKey";
+import { Lookups } from "./Dialogs/Lookups/Lookups";
 import { RiskScore } from "./Dialogs/RiskScore/RiskScore";
 import { Vendor } from "./Dialogs/Vendors/Vendor";
 import { OSProduct } from "./Types/OSProduct";
@@ -13,7 +14,7 @@ import { OSProduct } from "./Types/OSProduct";
 })
 //Service to load app component
 export class AppService{
-
+    private API = 'https://vgw90ravgg.execute-api.us-east-2.amazonaws.com/test';
     private OS = 'assets/Json/os-product.json';
     private VENDOR = 'assets/Json/vendor.json';
     private COUNT_KEY = 'assets/Json/countKey.json';
@@ -93,6 +94,20 @@ export class AppService{
         console.log('selected top 20 risk score name function ', this.riskScoreSelectionSubject.value);
     }
 
+    assetLookup(name: string){
+        return this.http.get<Lookups[]>(this.API + '/asset-lookup?asset-name=' + name).pipe(
+            tap(data => console.log('asset lookup return: ', JSON.stringify(data))), 
+            catchError(this.handleError)
+        )
+    }
+
+    keyLookup(path: string){
+        return this.http.get<Lookups[]>(this.API + '/key-lookup?key-path=' + path).pipe(
+            tap(data => console.log('key path lookup return: ', JSON.stringify(data))), 
+            catchError(this.handleError)
+        )
+    }
+
     private handleError(err: HttpErrorResponse){
         let errorMessage = '';
         if (err.error instanceof ErrorEvent){
@@ -105,4 +120,5 @@ export class AppService{
         return throwError(errorMessage);
     }
     
+
 }
