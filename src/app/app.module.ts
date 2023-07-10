@@ -24,9 +24,11 @@ import {MatTableModule} from '@angular/material/table';
 import { ExploreDataComponent } from './Dialogs/DataExplore/explore-data.component';
 import { ChartDisplayComponent } from './Dialogs/Charts/chart-display.component';
 import { VendorComponent } from './Dialogs/Vendors/vendors.component';
-import { HighCountSeverKeyComponent } from './Dialogs/HighCountKeyDetials/count-key.component';
+
 import { AssetLookupComponent } from './Dialogs/Lookups/asset-lookup.component';
 import { KeyLookupComponent } from './Dialogs/Lookups/key-lookup.component';
+import { HighCountComponent } from './Dialogs/HighCount/count-key.component';
+import { SeverKeyDetailsComponent } from './Dialogs/ServerKeyDetails/skd.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +40,10 @@ import { KeyLookupComponent } from './Dialogs/Lookups/key-lookup.component';
     ExploreDataComponent,
     ChartDisplayComponent,
     VendorComponent,
-    HighCountSeverKeyComponent,
+    HighCountComponent,
     AssetLookupComponent,
-    KeyLookupComponent
+    KeyLookupComponent,
+    SeverKeyDetailsComponent
   ],
   imports: [
     BrowserModule,

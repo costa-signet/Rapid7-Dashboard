@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AppService } from '../app.service';
-import { HighCountSeverKeyComponent } from '../Dialogs/HighCountKeyDetials/count-key.component';
+import { HighCountComponent } from '../Dialogs/HighCount/count-key.component';
 import { RiskScoreDetailsComponent } from '../Dialogs/RiskScore/risk-score-details.component';
+import { SeverKeyDetailsComponent } from '../Dialogs/ServerKeyDetails/skd.component';
 
 
 @Component({
@@ -13,16 +14,23 @@ import { RiskScoreDetailsComponent } from '../Dialogs/RiskScore/risk-score-detai
 export class Top20Component{
   constructor(private dialog: MatDialog, private appService: AppService) {}
 
-  openDialog(countKeyName: string){
-    this.appService.selectedCountKeyChange(countKeyName);
-    this.dialog.open(HighCountSeverKeyComponent, {
+  openHighestCount(countKeyName: string){
+    this.appService.selectedHighCountChange(countKeyName);
+    this.dialog.open(HighCountComponent, {
       width: '50%',
       height: '75%',
     });
   }
-  open(riskScoreName: string){
+  openRiskScore(riskScoreName: string){
     this.appService.selectedRiskScoreChange(riskScoreName);
     this.dialog.open(RiskScoreDetailsComponent, {
+      width: '50%',
+      height: '75%',
+    });
+  }
+  openSKD(skdName: string){
+    this.appService.selectedSKDChange(skdName);
+    this.dialog.open(SeverKeyDetailsComponent, {
       width: '50%',
       height: '75%',
     });

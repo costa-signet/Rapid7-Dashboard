@@ -6,13 +6,15 @@
         <tr>
             <th>IP Address</th>
             <th>Asset Name</th>
+            <th>Key</th>
             <th>Count</th>        
         </tr>
         </thead>
         <tbody> 
-        <tr *ngFor="let ck of countKey.output">
+        <tr *ngFor="let ck of countKey.details">
             <td>{{ ck.ip_address }}</td>
             <td>{{ ck.asset_name }}</td>
+            <td>{{ ck.key }}</td>
             <td>{{ ck.count }}</td>
         </tr>
         </tbody>

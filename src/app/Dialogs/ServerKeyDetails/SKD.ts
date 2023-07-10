@@ -1,9 +1,10 @@
-export interface CountKey {
+export interface SDK {
     name: string;
-    output: Item[];
+    details: Item[];
 }
 interface Item {
     ip_address: string;
     asset_name: string;
+    key: string;
     count: number;
 }

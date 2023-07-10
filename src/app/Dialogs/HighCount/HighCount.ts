@@ -1,4 +1,4 @@
-export interface CountKey {
+export interface HighCount {
     name: string;
     output: Item[];
 }

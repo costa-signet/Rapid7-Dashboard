@@ -3,15 +3,15 @@ import { catchError, EMPTY } from 'rxjs';
 import { AppService } from 'src/app/app.service';
 
 @Component({
-  selector: 'count-key-details',
-  templateUrl: './count-key.component.html',
+  selector: 'skd-details',
+  templateUrl: './skd.component.html',
 
 })
-export class HighCountSeverKeyComponent{
+export class SeverKeyDetailsComponent{
     errorMessage: string = '';
     constructor(private appService: AppService) {}
 
-    countKey$ = this.appService.selectedCountKey$
+    countKey$ = this.appService.selectedSKD$
     .pipe(
       catchError(err => {
         this.errorMessage = err;

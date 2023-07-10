@@ -1,9 +1,11 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, catchError, combineLatest, map, tap, throwError } from "rxjs";
-import { CountKey } from "./Dialogs/HighCountKeyDetials/CountKey";
+import { Charts } from "./Dialogs/Charts/Charts";
+import { HighCount } from "./Dialogs/HighCount/HighCount";
 import { Lookups } from "./Dialogs/Lookups/Lookups";
 import { RiskScore } from "./Dialogs/RiskScore/RiskScore";
+import { SDK } from "./Dialogs/ServerKeyDetails/SKD";
 import { Vendor } from "./Dialogs/Vendors/Vendor";
 import { OSProduct } from "./Types/OSProduct";
 
@@ -14,85 +16,128 @@ import { OSProduct } from "./Types/OSProduct";
 })
 //Service to load app component
 export class AppService{
-    private API = 'https://vgw90ravgg.execute-api.us-east-2.amazonaws.com/test';
-    private OS = 'assets/Json/os-product.json';
-    private VENDOR = 'assets/Json/vendor.json';
-    private COUNT_KEY = 'assets/Json/countKey.json';
-    private RISKSCORE = 'assets/Json/riskscore.json';
-    private vendorSelectionSubject = new BehaviorSubject<string>('');
-    private countKeySelectionSubject = new BehaviorSubject<string>('');
-    private riskScoreSelectionSubject = new BehaviorSubject<string>('');
     constructor (private http: HttpClient) { }
-
-    //For one chart in Vul Anlaysis tab
-    osProduct$ = this.http.get<OSProduct[]>(this.OS).pipe(
-        tap(data => console.log('All: ', JSON.stringify(data))), 
-        catchError(this.handleError)
-    );
-
+    //LookUp api call
+    private API = 'https://vgw90ravgg.execute-api.us-east-2.amazonaws.com/test';
+    private partition = '?partition=2023-05-02'  //find out if we want a select report feature or if we just want the most recent data. if most recent do the s3 bucket list filering to get partition
 
     //Vendor Observable 
-    vendors$ = this.http.get<Vendor[]>(this.VENDOR).pipe(
+    private VENDOR = 'https://vgw90ravgg.execute-api.us-east-2.amazonaws.com/test/os-vendors';
+    private vendorSelectionSubject = new BehaviorSubject<string>('');
+    vendors$ = this.http.get<Vendor[]>(this.VENDOR + this.partition).pipe(
         tap(data => console.log('All: ', JSON.stringify(data))), 
         catchError(this.handleError)
     );
-
     vendorSelectionAction$ = this.vendorSelectionSubject.asObservable();
-
     selectedVendor$ = combineLatest([this.vendors$, this.vendorSelectionAction$])
         .pipe(
             map(([vendors, selectedVendorName]) => 
                 vendors.find(vendor => vendor.search === selectedVendorName)),
             tap(name => console.log('selected venodr ', name))
     );
-   
     selectedVendorChange(selectedVendorName: string): void{ 
         this.vendorSelectionSubject.next(selectedVendorName);
         console.log('selected vendor name function ', this.vendorSelectionSubject.value);
     }
 
-
-    //Observable for data of type IP Addres -- Asset Name -- Count
-    countKeys$ = this.http.get<CountKey[]>(this.COUNT_KEY).pipe(
+    //High Count Observalble
+    private HIGH_COUNT = 'https://vgw90ravgg.execute-api.us-east-2.amazonaws.com/test/high-count';
+    private highCountSelectionSubject = new BehaviorSubject<string>('');
+    highCounts$ = this.http.get<HighCount[]>(this.HIGH_COUNT + this.partition).pipe(
         tap(data => console.log('All: ', JSON.stringify(data))), 
         catchError(this.handleError)
     );
-
-    countKeySelectionAction$ = this.countKeySelectionSubject.asObservable();
-
-    selectedCountKey$ = combineLatest([this.countKeys$, this.countKeySelectionAction$])
+    highCountSelectionAction$ = this.highCountSelectionSubject.asObservable();
+    selectedHighCount$ = combineLatest([this.highCounts$, this.highCountSelectionAction$])
         .pipe(
-            map(([countKeys, selectedCountKeyName]) => 
-            countKeys.find(countKey => countKey.name === selectedCountKeyName)),
-            tap(name => console.log('selected top20 count or key ', name))
+            map(([highCounts, highCountSelectionName]) => 
+            highCounts.find(countKey => countKey.name === highCountSelectionName)),
+            tap(name => console.log('selected top20 count ', name))
     );
-   
-    selectedCountKeyChange(selectedCountKeyName: string): void{ 
-        this.countKeySelectionSubject.next(selectedCountKeyName);
-        console.log('selected top 20 count or key name function ', this.countKeySelectionSubject.value);
+    selectedHighCountChange(highCountSelectionName: string): void{ 
+        this.highCountSelectionSubject.next(highCountSelectionName);
+        console.log('selected top 20 high count name ', this.highCountSelectionSubject.value);
     }
 
-
-
-    //Observable for data of type IP Addres -- Asset Name -- CVSS2 Score -- Risk Score
-    riskScores$ = this.http.get<RiskScore[]>(this.RISKSCORE).pipe(
+    //Risk Score Observable
+    private RISKSCORE = 'https://vgw90ravgg.execute-api.us-east-2.amazonaws.com/test/risk-score';
+    private riskScoreSelectionSubject = new BehaviorSubject<string>('');
+    riskScores$ = this.http.get<RiskScore[]>(this.RISKSCORE + this.partition).pipe(
         tap(data => console.log('All: ', JSON.stringify(data))), 
         catchError(this.handleError)
     );
-
     riskScoreSelectionAction$ = this.riskScoreSelectionSubject.asObservable();
-
     selectedRiskScore$ = combineLatest([this.riskScores$, this.riskScoreSelectionAction$])
         .pipe(
             map(([riskScores, selectedRiskScoreName]) => 
             riskScores.find(riskScore => riskScore.name === selectedRiskScoreName)),
             tap(name => console.log('selected top20  risk score ', name))
     );
-   
     selectedRiskScoreChange(selectedRiskScoreName: string): void{ 
         this.riskScoreSelectionSubject.next(selectedRiskScoreName);
         console.log('selected top 20 risk score name function ', this.riskScoreSelectionSubject.value);
     }
+
+    //Server Key Details Observable 
+    private SKD = ' https://vgw90ravgg.execute-api.us-east-2.amazonaws.com/test/server-key-details';
+    private SKDSelectionSubject = new BehaviorSubject<string>('');
+    SKDs$ = this.http.get<SDK[]>(this.SKD + this.partition).pipe(
+        tap(data => console.log('All: ', JSON.stringify(data))), 
+        catchError(this.handleError)
+    );
+    SKDselectionAction$ = this.SKDSelectionSubject.asObservable();
+    selectedSKD$ = combineLatest([this.SKDs$, this.SKDselectionAction$])
+        .pipe(
+            map(([SKDs, selectedSDKName]) => 
+                SKDs.find(SKD => SKD.name === selectedSDKName)),
+            tap(name => console.log('selected SKD ', name))
+    );
+    selectedSKDChange(selectedSDKName: string): void{ 
+        this.SKDSelectionSubject.next(selectedSDKName);
+        console.log('selected SKD name function ', this.SKDSelectionSubject.value);
+    }
+
+
+
+
+
+
+    //Chart Observable 
+    private CHARTS = ' https://vgw90ravgg.execute-api.us-east-2.amazonaws.com/test/charts';
+    private chartSelectionSubject = new BehaviorSubject<string>('');
+    charts$ = this.http.get<Charts[]>(this.CHARTS + this.partition).pipe(
+        tap(data => console.log('All: ', JSON.stringify(data))), 
+        catchError(this.handleError)
+    );
+    chartSelectionAction$ = this.chartSelectionSubject.asObservable();
+    selectedChart$ = combineLatest([this.charts$, this.chartSelectionAction$])
+        .pipe(
+            map(([charts, selectedChartName]) => 
+                charts.find(chart => chart.chart === selectedChartName)),
+            tap(name => console.log('selected chart ', name))
+    );
+    selectedChartChange(selectedChartName: string): void{ 
+        this.chartSelectionSubject.next(selectedChartName);
+        console.log('selected chart name function ', this.chartSelectionSubject.value);
+    }
+
+
+
+
+    /*private OS = 'https://vgw90ravgg.execute-api.us-east-2.amazonaws.com/test/os-product-group';
+    osProduct$ = this.http.get<OSProduct[]>(this.OS + this.partition).pipe(
+        tap(data => console.log('All: ', JSON.stringify(data))), 
+        catchError(this.handleError)
+    );*/
+
+    
+
+
+    
+
+
+
+    
 
     assetLookup(name: string){
         return this.http.get<Lookups[]>(this.API + '/asset-lookup?asset-name=' + name).pipe(
