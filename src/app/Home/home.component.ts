@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { catchError, EMPTY } from 'rxjs';
+import { AppService } from '../app.service';
 import { ChartDisplayComponent } from '../Dialogs/Charts/chart-display.component';
 import { ExploreDataComponent } from '../Dialogs/DataExplore/explore-data.component';
 import { AssetLookupComponent } from '../Dialogs/Lookups/asset-lookup.component';
@@ -12,10 +14,18 @@ import { KeyLookupComponent } from '../Dialogs/Lookups/key-lookup.component';
 
 })
 export class HomeComponent{
-  constructor(private dialog: MatDialog) {
-  }  
+  constructor(private dialog: MatDialog, private appService: AppService) {}  
   assetLookupText: string = '';
   keyPathLookupText: string = '';
+  errorMessage = '';
+  
+  charts$ = this.appService.charts$
+    .pipe(
+      catchError(err => {
+        this.errorMessage = err;
+        return EMPTY;
+      })
+    );
 
   onSubmitAssetLookup() {
     console.log('Asset Lookup Text:', this.assetLookupText);
@@ -41,11 +51,11 @@ export class HomeComponent{
       height: '75%',
     });
   }
-  openChart(chartId: number){
+  openChart(chartName: string){
+    this.appService.selectedChartChange(chartName);
     this.dialog.open(ChartDisplayComponent, {
       width: '50%',
-      height: '75%',
-      data: chartId
+      height: '75%'
     });
   }
 }

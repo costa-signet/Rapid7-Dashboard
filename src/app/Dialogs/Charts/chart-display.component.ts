@@ -1,5 +1,7 @@
 import { Component, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { catchError, EMPTY } from "rxjs";
+import { AppService } from "src/app/app.service";
 
 @Component({
     selector: 'app-chart-display',
@@ -7,7 +9,15 @@ import { MAT_DIALOG_DATA } from "@angular/material/dialog";
   })
   
   export class ChartDisplayComponent{ 
-    constructor(@Inject(MAT_DIALOG_DATA) public data: number ) {}
+    constructor(private appService: AppService ) {}
+    errorMessage = '';
 
+    selectedChart$ = this.appService.selectedChart$
+    .pipe(
+      catchError(err => {
+        this.errorMessage = err;
+        return EMPTY;
+      })
+    );
     
   }
